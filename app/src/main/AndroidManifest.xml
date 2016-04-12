@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.cesar.nave.androidsamples">
+
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".layout.LinearLayoutActivity" />
+        <activity android:name=".layout.RelativeLayoutActivity" />
+        <activity android:name=".arkanoid.Arkanoid" />
+        <activity android:name=".arkanoid.StartScreen" />
+        <activity android:name=".intent.IntentActivity" />
+        <activity android:name=".broadcast_receiver.BroadcastActivity" />
+
+        <receiver
+            android:name=".broadcast_receiver.BCReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="BCReceiver" />
+                <action android:name="AlarmReceiver" />
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".notification.NotificationActivity" />
+        <activity android:name=".notification.ExecuteNotificationsActivity" />
+        <activity android:name=".alarm.AlarmActivity" />
+        <activity android:name=".service.ServiceActivity" />
+
+        <service
+            android:name=".service.CounterService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".service.BindServiceActivity" />
+        <activity android:name=".handler.HandlerChild" />
+        <activity android:name=".sms.SMSActivity" />
+        <activity android:name=".audio.AudioActivity" />
+        <activity android:name=".video.VideoActivity" />
+        <activity android:name=".camera.CameraActivity" />
+        <activity android:name=".tcp_client.CalculatorActivity" />
+
+        <service
+            android:name=".tcp_client.CalculatorService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".http_client.LoginActivity" />
+
+        <service
+            android:name=".http_client.HTTPService"
+            android:enabled="true"
+            android:exported="true"></service>
+    </application>
+
+</manifest>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/relativeLayoutLabelLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/login"
+        android:textSize="30sp"/>
+
+    <EditText
+        android:id="@+id/relativeLayoutFieldLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/relativeLayoutLabelLogin"
+        android:layout_toEndOf="@id/relativeLayoutLabelLogin"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
+        android:inputType="text"/>
+
+    <TextView
+        android:id="@+id/relativeLayoutLabelPass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/relativeLayoutLabelLogin"
+        android:text="@string/password"
+        android:textSize="30sp"
+        android:layout_marginTop="20dp"/>
+
+    <EditText
+        android:id="@+id/relativeLayoutFieldPass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/relativeLayoutLabelPass"
+        android:layout_toEndOf="@id/relativeLayoutLabelPass"
+        android:layout_alignTop="@id/relativeLayoutLabelPass"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
+        android:inputType="textPassword"/>
+
+    <Button
+        android:id="@+id/relativeLayoutButtonLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/relativeLayoutLabelPass"
+        android:layout_marginTop="20dp"
+        android:text="@string/login" />
+
+    <TextView
+        android:id="@+id/relativeLayoutLabelAuth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/relativeLayoutButtonLogin"
+        android:layout_marginTop="20dp"
+        android:text="@string/ok"
+        android:textSize="30sp"
+        android:visibility="invisible"
+        />
+
+</RelativeLayout>
