@@ -7,11 +7,11 @@ import android.widget.TextView;
 
 import com.cesar.nave.androidsamples.R;
 
-public class MessagesManager extends Handler
+class MessagesManager extends Handler
 {
-    public static final int SUM = 1;
+    static final int SUM = 1;
 
-    private static MessagesManager instance;
+    static MessagesManager instance;
     private View view;
 
     private MessagesManager(View v)
@@ -19,7 +19,7 @@ public class MessagesManager extends Handler
         view = v;
     }
 
-    public static MessagesManager GetInstance(View v)
+    static MessagesManager GetInstance(View v)
     {
         if(instance == null) instance = new MessagesManager(v);
 

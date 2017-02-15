@@ -20,13 +20,19 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name=".layout.LinearLayoutActivity" />
         <activity android:name=".layout.RelativeLayoutActivity" />
-        <activity android:name=".arkanoid.Arkanoid" />
+        <activity android:name=".arkanoid.Arkanoid">
+            <intent-filter>
+                <action android:name="JOGO" />
+                <category android:name="ACAO" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
         <activity android:name=".arkanoid.StartScreen" />
         <activity android:name=".intent.IntentActivity" />
         <activity android:name=".broadcast_receiver.BroadcastActivity" />

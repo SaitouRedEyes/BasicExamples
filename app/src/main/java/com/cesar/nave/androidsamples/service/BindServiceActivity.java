@@ -38,6 +38,7 @@ public class BindServiceActivity extends AppCompatActivity implements ServiceCon
                 Log.d("BIND SERVICE SAMPLE", "START BIND SERVICE");
 
                 bindService(new Intent(BindServiceActivity.this, CounterService.class), connection, Context.BIND_AUTO_CREATE);
+                Toast.makeText(v.getContext(), "Bind service", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -46,7 +47,9 @@ public class BindServiceActivity extends AppCompatActivity implements ServiceCon
             @Override
             public void onClick(View v)
             {
+
                 UnbindConnection();
+                Toast.makeText(v.getContext(), "Unbind service", Toast.LENGTH_SHORT).show();
             }
         });
 

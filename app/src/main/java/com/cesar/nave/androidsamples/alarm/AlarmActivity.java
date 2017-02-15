@@ -8,7 +8,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.cesar.nave.androidsamples.R;
 
@@ -67,17 +66,20 @@ public class AlarmActivity extends AppCompatActivity
         //Wake up the device to fire the alarm in 30 minutes, and every 30 minutes after that:
         alarmManager.setInexactRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP,
                 AlarmManager.INTERVAL_HALF_HOUR,
-                AlarmManager.INTERVAL_HALF_HOUR, alarmReceiverIntent);
+                AlarmManager.INTERVAL_HALF_HOUR,
+                alarmReceiverIntent);
 
-        Toast.makeText(this, "Alarm set to 30 min", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "Alarm set to 30 min", Toast.LENGTH_SHORT).show();
     }
 
     private void SetElapsedRealTimeAlarm()
     {
         //Wake up the device to fire a one-time (non-repeating) alarm in 5 seconds:
-        alarmManager.set(AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime() + 5 * 1000, alarmReceiverIntent);
+        alarmManager.set(AlarmManager.ELAPSED_REALTIME_WAKEUP,
+                SystemClock.elapsedRealtime() + (5 * 1000),
+                alarmReceiverIntent);
 
-        Toast.makeText(this, "Alarm set to 5 seconds", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "Alarm set to 5 seconds: " + currTime, Toast.LENGTH_SHORT).show();
     }
 
     private void SetRTCExactAlarm()
@@ -88,9 +90,11 @@ public class AlarmActivity extends AppCompatActivity
         calendar.set(Calendar.HOUR_OF_DAY, 8);
         calendar.set(Calendar.MINUTE, 30);
 
-        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), 1000 * 60, alarmReceiverIntent);
+        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,
+                calendar.getTimeInMillis(), 1000 * 60,
+                alarmReceiverIntent);
 
-        Toast.makeText(this, "Alarm set to a specific hour of day and repeat each 5 seconds", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "Alarm set to a specific hour of day and repeat each 5 seconds", Toast.LENGTH_SHORT).show();
     }
 
     private void SetRTCInexactAlarm()
@@ -98,10 +102,13 @@ public class AlarmActivity extends AppCompatActivity
         //Wake up the device to fire the alarm at approximately 3:00 p.m., and repeat once a day at the same time:
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(System.currentTimeMillis());
-        calendar.set(Calendar.HOUR_OF_DAY, 15);
+        calendar.set(Calendar.HOUR_OF_DAY, 16);
 
-        alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY, alarmReceiverIntent);
+        alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP,
+                calendar.getTimeInMillis(),
+                AlarmManager.INTERVAL_DAY,
+                alarmReceiverIntent);
 
-        Toast.makeText(this, "Alarm set to 15:00 every day", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "Alarm set to 15:00 every day", Toast.LENGTH_SHORT).show();
     }
 }

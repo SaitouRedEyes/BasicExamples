@@ -3,35 +3,36 @@ package com.cesar.nave.androidsamples.tcp_client;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SocketRequests implements Runnable
+class SocketRequests implements Runnable
 {
     private List<Float> params;
     private SocketSendToServer sendToServer;
     private Object serverResponse = null;
 
-    public enum Services
+    enum Services
     {
         CONNECT, SUM
     }
 
-    public SocketRequests()
+    SocketRequests()
     {
         params = new ArrayList<>();
         sendToServer = new SocketSendToServer();
     }
 
-    public Object ServerResponse() { return serverResponse; }
-    public void NullServerResponse() { serverResponse = null; }
+    Object ServerResponse() { return serverResponse; }
+    void NullServerResponse() { serverResponse = null; }
 
-    public void Connect()
+    void Connect()
     {
         params.clear();
         StartThread("Connect Thread");
     }
 
-    public void Sum(String n1, String n2)
+    void Sum(String n1, String n2)
     {
         params.clear();
+        params.add((float)Services.SUM.ordinal());
         params.add(Float.parseFloat(n1));
         params.add(Float.parseFloat(n2));
 

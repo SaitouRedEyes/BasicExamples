@@ -10,6 +10,7 @@ public class CounterService extends Service implements Runnable, Counter
 {
     protected int count;
     private boolean active;
+
     private final LocalBinder connection = new LocalBinder();
 
     //This class returns to Activity the service reference.
@@ -24,7 +25,7 @@ public class CounterService extends Service implements Runnable, Counter
     {
         super.onCreate();
 
-        Log.d("SERVICE SAMPLE", "SERVICE SAMPLE onCreate()");
+        Log.d("SERVICE SAMPLE", "onCreate()");
         active = true;
         new Thread(this).start();
     }
@@ -32,7 +33,7 @@ public class CounterService extends Service implements Runnable, Counter
     @Override
     public int onStartCommand(Intent intent, int flags, int startId)
     {
-        Log.d("SERVICE SAMPLE", "SERVICE SAMPLE onStart()");
+        Log.d("SERVICE SAMPLE", "onStart()");
         return super.onStartCommand(intent, flags, startId);
     }
 
@@ -41,7 +42,7 @@ public class CounterService extends Service implements Runnable, Counter
     {
         super.onDestroy();
 
-        Log.d("SERVICE SAMPLE", "SERVICE SAMPLE onDestroy()");
+        Log.d("SERVICE SAMPLE", "onDestroy()");
         active = false;
     }
 
@@ -58,14 +59,14 @@ public class CounterService extends Service implements Runnable, Counter
     {
         while(active)
         {
-            Log.d("SERVICE SAMPLE", "EXECUTING SERVICE: " + count);
+            Log.d("SERVICE SAMPLE", "Count: " + count);
             count++;
 
             SetInterval();
         }
 
         count = 0;
-        Log.d("SERVICE SAMPLE", "SERVICE SAMPLE: FIM");
+        Log.d("SERVICE SAMPLE", "End");
 
         stopSelf();
     }

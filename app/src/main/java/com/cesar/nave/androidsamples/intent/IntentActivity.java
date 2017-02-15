@@ -101,9 +101,9 @@ public class IntentActivity extends AppCompatActivity
             public void onClick(View v)
             {
                 //Opening activity from another project.
-                Intent i = new Intent("TEST_ACTION");
-                i.addCategory("TEST_CATEGORY");
-                i.putExtra(Intent.EXTRA_TEXT, "Intent-Filter Sample Message Received");
+                Intent i = new Intent("JOGO");
+                i.addCategory("ACAO");
+                i.putExtra(Intent.EXTRA_TEXT, "Message from Intent Activity Sample!!");
 
                 if(i.resolveActivity(getPackageManager()) != null) startActivity(i);
                 else Toast.makeText(v.getContext(), "You don't have this app installed", Toast.LENGTH_SHORT).show();

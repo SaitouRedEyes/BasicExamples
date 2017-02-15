@@ -13,13 +13,22 @@ public class HTTPService extends Service
 
     public class HTTPBinder extends Binder
     {
-        public HTTPService GetService() { return HTTPService.this; }
+        public HTTPService GetService()
+        {
+            return HTTPService.this;
+        }
     }
 
-    public HTTPRequests GetRequests() { return requests; }
+    public HTTPRequests GetRequests()
+    {
+        return requests;
+    }
 
     @Override
-    public IBinder onBind(Intent intent) { return connection; }
+    public IBinder onBind(Intent intent)
+    {
+        return connection;
+    }
 
     @Override
     public void onCreate()

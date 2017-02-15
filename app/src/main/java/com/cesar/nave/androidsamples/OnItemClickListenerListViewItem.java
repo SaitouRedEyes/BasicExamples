@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.cesar.nave.androidsamples.alarm.AlarmActivity;
 import com.cesar.nave.androidsamples.arkanoid.StartScreen;
@@ -23,7 +24,7 @@ import com.cesar.nave.androidsamples.sms.SMSActivity;
 import com.cesar.nave.androidsamples.tcp_client.CalculatorActivity;
 import com.cesar.nave.androidsamples.video.VideoActivity;
 
-public class OnItemClickListenerListViewItem implements OnItemClickListener
+class OnItemClickListenerListViewItem implements OnItemClickListener
 {
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int pos, long id)
@@ -49,6 +50,8 @@ public class OnItemClickListenerListViewItem implements OnItemClickListener
             case "Camera": ChangeActivity(c, CameraActivity.class); break;
             case "Socket TCP Client": ChangeActivity(c, CalculatorActivity.class); break;
             case "HTTP Client": ChangeActivity(c, LoginActivity.class); break;
+            default:
+                Toast.makeText(c, "Go to Fócking Hell", Toast.LENGTH_LONG).show(); break;
         }
     }
 

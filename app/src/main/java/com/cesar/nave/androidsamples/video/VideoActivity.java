@@ -22,9 +22,28 @@ public class VideoActivity extends AppCompatActivity
 
         VideoView videoView = (VideoView) findViewById(R.id.videoView);
         videoView.setMediaController(new MediaController(this));
-        videoView.setVideoURI(Uri.parse(Environment.getExternalStorageDirectory().getPath() + "/video/adeus_pikachu.3gp"));
+        videoView.setVideoURI(Uri.parse(Environment.getExternalStorageDirectory().getPath() + "/video/cube-colors.3gp"));
         videoView.requestFocus();
         videoView.start();
+
+        videoView.setOnErrorListener(new MediaPlayer.OnErrorListener()
+        {
+            @Override
+            public boolean onError(MediaPlayer mp, int what, int extra)
+            {
+                String errorMsg;
+
+                switch(what)
+                {
+                    case MediaPlayer.MEDIA_ERROR_UNKNOWN: errorMsg = "Media error unknown"; break;
+                    default: errorMsg = "something happened: error ID = " + what; break;
+                }
+
+                Toast.makeText(getApplicationContext(), "Problem: " + errorMsg, Toast.LENGTH_SHORT).show();
+
+                return true;
+            }
+        });
 
         videoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener()
         {

@@ -25,7 +25,7 @@ public class MySmsManager
         return instance;
     }
 
-    public void SendSMS(Context context, String number, String text)
+    void SendSMS(Context context, String number, String text)
     {
         try
         {

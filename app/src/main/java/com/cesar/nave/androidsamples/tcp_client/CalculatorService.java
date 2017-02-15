@@ -13,7 +13,7 @@ public class CalculatorService extends Service
 
     public class CalculatorBinder extends Binder
     {
-        public CalculatorService GetService() { return CalculatorService.this; }
+        CalculatorService GetService() { return CalculatorService.this; }
     }
 
     public SocketRequests GetRequests() { return requests; }

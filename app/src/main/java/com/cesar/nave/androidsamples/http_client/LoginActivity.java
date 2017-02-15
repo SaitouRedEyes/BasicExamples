@@ -152,7 +152,9 @@ public class LoginActivity extends AppCompatActivity implements ServiceConnectio
 
     private void LoginResponse(Object serverResponse)
     {
-        labelResult.setText(!serverResponse.toString().equals("") ? serverResponse.toString() : "User not found!!");
+        labelResult.setText(!serverResponse.toString().equals("") ?
+                serverResponse.toString() :
+                "User not found!!");
         labelResult.setVisibility(View.VISIBLE);
     }
 }

@@ -8,14 +8,14 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-public class ArrayAdapterItem extends ArrayAdapter<String>
+class ArrayAdapterItem extends ArrayAdapter<String>
 {
 
-    Context c;
-    int layoutResourceID;
-    String[] androidContents = null;
+    private Context c;
+    private int layoutResourceID;
+    private String[] androidContents = null;
 
-    public ArrayAdapterItem(Context c, int layoutResourceID, String[] androidContents)
+    ArrayAdapterItem(Context c, int layoutResourceID, String[] androidContents)
     {
         super(c, layoutResourceID, androidContents);
 

@@ -157,6 +157,12 @@ public class CalculatorActivity extends AppCompatActivity implements ServiceConn
             labelResult.setText(serverResponse.toString());
             labelResult.setVisibility(View.VISIBLE);
         }
-        else Toast.makeText(this, "Problems to make the Sum operation. Try again later.", Toast.LENGTH_SHORT).show();
+        else
+        {
+            Toast.makeText(this, "Problems to make the Sum operation. Try again later.", Toast.LENGTH_SHORT).show();
+            unbindService(connection);
+            stopService(i);
+            finish();
+        }
     }
 }
